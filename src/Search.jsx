@@ -1,11 +1,26 @@
-const Search = ({ onSearch, searchTerm }) => {
+import { Container, TextField, Typography } from '@mui/material';
+
+const InputWithLabel = ({ type, id, label, value, onInputChange }) => {
   return (
-    <div>
-      <label htmlFor="search">Search: </label>
-      <input type="text" id="search" onChange={onSearch} value={searchTerm} />
-      <p>Searching for: {searchTerm}</p>
-    </div>
+    <Container>
+      <TextField
+        type={type}
+        id={id}
+        label={label}
+        variant="standard"
+        onChange={onInputChange}
+        value={value}
+        sx={{ marginTop: '1rem', marginBottom: '1rem' }}
+      />
+      <Typography
+        variant="body2"
+        sx={{ color: 'black', marginBottom: '2rem' }}
+        gutterBottom
+      >
+        Searching for: {value}
+      </Typography>
+    </Container>
   );
 };
 
-export default Search;
+export default InputWithLabel;

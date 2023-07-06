@@ -1,4 +1,6 @@
-export default function Header() {
+import { Typography } from '@mui/material';
+
+const Header = () => {
   const welcome = {
     greeting: 'Hey',
     title: 'React',
@@ -9,17 +11,24 @@ export default function Header() {
 
   return (
     <>
-      <h1>
+      <Typography
+        variant="h1"
+        sx={{ color: '#646cff', fontWeight: '700', marginBottom: '1rem' }}
+      >
         {greeting}, {title}
-      </h1>
+      </Typography>
       <img
         src="src/assets/react.svg"
         alt="React Logo"
         width="96"
         height="96"
-        style={{ margin: '0 auto' }}
+        style={{ margin: '0 auto', marginBottom: '1rem' }}
       />
-      <h3>{subtitle}</h3>
+      <Typography variant="h5" sx={{ color: 'black', fontWeight: '400' }}>
+        {subtitle}
+      </Typography>
     </>
   );
-}
+};
+
+export default Header;
