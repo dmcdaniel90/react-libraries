@@ -31,17 +31,13 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: #8360c3; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #2ebf91,
-    #8360c3
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #2ebf91,
-    #8360c3
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-color: #50e3c2;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(162, 77%, 40%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(198, 100%, 50%) 0, transparent 55%);
 }
 
 h1 {
