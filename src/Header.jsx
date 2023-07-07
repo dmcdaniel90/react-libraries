@@ -1,5 +1,6 @@
 import { Typography } from '@mui/material';
-import { motion, animate } from 'framer-motion';
+import { motion } from 'framer-motion';
+import ReactTextTransition, { presets } from 'react-text-transition';
 
 const Header = () => {
   const welcome = {
