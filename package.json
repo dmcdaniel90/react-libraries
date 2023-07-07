@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "vite",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "test": "vitest",
+    "preview": "vite preview",
     "pre-build": "rm -rf dist",
     "build": "vite build",
     "deploy": "gh-pages -d dist"
@@ -16,8 +17,11 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.13.7",
+    "framer-motion": "^10.12.18",
+    "lodash": "^4.17.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",
@@ -34,6 +38,7 @@
     "prettier": "^2.8.8",
     "vite": "^4.3.9",
     "vite-plugin-copy": "^0.1.6",
-    "vite-plugin-svgr": "^3.2.0"
+    "vite-plugin-svgr": "^3.2.0",
+    "vitest": "^0.33.0"
   }
 }

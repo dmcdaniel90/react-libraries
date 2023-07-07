@@ -1,4 +1,12 @@
-import { Box, Button, Typography, Modal, Tooltip } from '@mui/material';
+import {
+  Container,
+  Box,
+  Button,
+  Typography,
+  Modal,
+  Tooltip,
+} from '@mui/material';
+import { BsInfoCircle } from 'react-icons/bs';
 import { useState } from 'react';
 
 const style = {
@@ -33,17 +41,30 @@ const BasicModal = ({ buttonColor, id, description, commands }) => {
           borderColor: buttonColor,
         }}
         onClick={handleOpen}
+        className="modal-button"
       >
-        Details
+        <span
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
+          <Typography variant="body" sx={{ marginRight: '0.325rem' }}>
+            Details
+          </Typography>{' '}
+          <BsInfoCircle />
+        </span>
       </Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
           <Typography id={`modal-${id}-title `} variant="h4" component="h2">
             {id}
           </Typography>
-          <Typography id={`modal-${id}-description`} sx={{ mt: 2 }}>
+          <Container id={`modal-${id}-description`} sx={{ mt: 2 }}>
             <span>
-              <Typography variant="h6">{description}</Typography>
+              <Typography style={{ fontSize: '1.2rem' }}>
+                {description}
+              </Typography>
             </span>
             {commands.map((command, index) => {
               const key = `modal-${index}`;
@@ -68,7 +89,7 @@ const BasicModal = ({ buttonColor, id, description, commands }) => {
                 </div>
               );
             })}
-          </Typography>
+          </Container>
         </Box>
       </Modal>
     </>

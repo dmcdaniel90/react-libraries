@@ -3,7 +3,7 @@ import List from './List';
 import InputWithLabel from './Search';
 import Header from './Header';
 import Container from '@mui/material/Container';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 const logos = {
   astro: 'src/assets/astro-svgrepo-com.svg',
@@ -19,6 +19,7 @@ const logos = {
   react1: 'src/assets/react.svg',
   react2: 'src/assets/react-1-logo-svgrepo-com.svg',
   reactHook: 'src/assets/react-hook-form.svg',
+  reactIcons: 'src/assets/react-icons.svg',
   reactRouter: 'src/assets/react-router-svgrepo-com.svg',
   reactSpring: 'src/assets/react-spring-svgrepo-com.svg',
   reactTesting: 'src/assets/react-testing-library.webp',
@@ -100,7 +101,7 @@ const reactList = [
     ],
   },
   {
-    title: 'React Bootstrap',
+    title: 'Bootstrap for React',
     url: 'https://react-bootstrap.github.io/',
     objectID: 6,
     image: logos.bootstrap,
@@ -251,14 +252,28 @@ const reactList = [
       'Build cross-platform desktop apps with JavaScript, HTML, and CSS',
     commands: ['npm install electron'],
   },
+  {
+    title: 'React Icons',
+    url: 'https://react-icons.github.io/react-icons/',
+    objectID: 23,
+    image: logos.reactIcons,
+    description: 'Include popular icons in your React projects easily.',
+    commands: ['npm install react-icons --save'],
+  },
 ];
 
 //* INFO: Custom Hook
 const useStorageState = (key, initialState) => {
+  const isMounted = useRef(false);
   const [value, setValue] = useState(localStorage.getItem(key) || initialState);
 
   useEffect(() => {
-    localStorage.setItem(key, value);
+    if (!isMounted.current) {
+      isMounted.current = true;
+    } else {
+      // console.log('firstRender');
+      localStorage.setItem(key, value);
+    }
   }, [value, key]);
 
   return [value, setValue];
@@ -307,3 +322,5 @@ function App() {
 }
 
 export default App;
+
+export { List, InputWithLabel, Header, reactList, useStorageState };

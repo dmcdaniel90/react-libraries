@@ -11,6 +11,7 @@ const InputWithLabel = ({ type, id, label, value, onInputChange }) => {
         onChange={onInputChange}
         value={value}
         sx={{ marginTop: '1rem', marginBottom: '1rem' }}
+        autoFocus
       />
       <Typography
         variant="body2"

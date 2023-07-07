@@ -20,6 +20,7 @@ const Item = ({ item }) => {
         border: '1px solid rgba(209, 213, 219, 0.3)',
         paddingTop: '1.5rem',
       }}
+      className="item"
     >
       <CardMedia
         sx={{
