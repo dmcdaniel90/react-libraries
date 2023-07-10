@@ -21,10 +21,6 @@ node_modules
 *.sln
 *.sw?
 dist/
-firebase.json
-.firebaserc
 .eslintrc.json
-vite.config.js
 .prettierrc
-
 ```
