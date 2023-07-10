@@ -20,6 +20,11 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
-.prettierrc
-.eslintrc
 dist/
+firebase.json
+.firebaserc
+.eslintrc.json
+vite.config.js
+.prettierrc
+
+```
