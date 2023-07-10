@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 import { motion } from 'framer-motion';
-import ReactTextTransition, { presets } from 'react-text-transition';
+import { default as React } from './assets/react.svg';
 
 const Header = () => {
   const welcome = {
@@ -29,7 +29,7 @@ const Header = () => {
         {greeting}, {title}
       </Typography>
       <img
-        src="src/assets/react.svg"
+        src={React}
         alt="React Logo"
         width="96"
         height="96"

@@ -5,7 +5,7 @@ import { copy } from 'vite-plugin-copy';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/react-libraries',
+  base: './',
   plugins: [
     react(),
     svgr(),
