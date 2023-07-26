@@ -62,6 +62,7 @@ const Item = ({ item }) => {
         description={item.description}
         commands={item.commands}
         modalID={item.modalID}
+        textColor={item.textColor1}
       />
     </Card>
   );

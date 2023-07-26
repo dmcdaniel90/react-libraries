@@ -19,10 +19,10 @@ const style = {
   border: 'none',
   borderRadius: '12px',
   boxShadow: 24,
-  p: 4,
+  p: 4, 
 };
 
-const BasicModal = ({ buttonColor, id, description, commands }) => {
+const BasicModal = ({ buttonColor, id, description, commands, textColor }) => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -51,18 +51,18 @@ const BasicModal = ({ buttonColor, id, description, commands }) => {
         >
           <Typography variant="body" sx={{ marginRight: '0.325rem' }}>
             Details
-          </Typography>{' '}
+          </Typography>
           <BsInfoCircle />
         </span>
       </Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
-          <Typography id={`modal-${id}-title `} variant="h4" component="h2">
+          <Typography id={`modal-${id}-title `} variant="h4" component="h2" style={{color: 'black'}}>
             {id}
           </Typography>
           <Container id={`modal-${id}-description`} sx={{ mt: 2 }}>
             <span>
-              <Typography style={{ fontSize: '1.2rem' }}>
+              <Typography style={{ fontSize: '1.2rem', color: 'black' }}>
                 {description}
               </Typography>
             </span>
@@ -78,6 +78,7 @@ const BasicModal = ({ buttonColor, id, description, commands }) => {
                     padding: '1rem',
                     margin: '1rem auto',
                     boxShadow: '0px 2px 5px 2px rgba(0, 0, 0, 0.2)',
+                    color: 'black'
                   }}
                   onClick={() => handleCopy(command)}
                 >
