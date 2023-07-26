@@ -1,4 +1,4 @@
-import { Container, TextField, Typography } from '@mui/material';
+import { Container, TextField, Typography } from "@mui/material";
 
 const InputWithLabel = ({ type, id, label, value, onInputChange }) => {
   return (
@@ -10,12 +10,12 @@ const InputWithLabel = ({ type, id, label, value, onInputChange }) => {
         variant="standard"
         onChange={onInputChange}
         value={value}
-        sx={{ marginTop: '1rem', marginBottom: '1rem' }}
+        sx={{ marginTop: "1rem", marginBottom: "1rem" }}
         autoFocus
       />
       <Typography
         variant="body2"
-        sx={{ color: 'black', marginBottom: '2rem' }}
+        sx={{ color: "black", marginBottom: "2rem" }}
         gutterBottom
       >
         Searching for: {value}

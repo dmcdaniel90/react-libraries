@@ -5,21 +5,21 @@ import {
   Typography,
   Modal,
   Tooltip,
-} from '@mui/material';
-import { BsInfoCircle } from 'react-icons/bs';
-import { useState } from 'react';
+} from "@mui/material";
+import { BsInfoCircle } from "react-icons/bs";
+import { useState } from "react";
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: 'none',
-  borderRadius: '12px',
+  bgcolor: "background.paper",
+  border: "none",
+  borderRadius: "12px",
   boxShadow: 24,
-  p: 4, 
+  p: 4,
 };
 
 const BasicModal = ({ buttonColor, id, description, commands, textColor }) => {
@@ -27,7 +27,7 @@ const BasicModal = ({ buttonColor, id, description, commands, textColor }) => {
   const [copied, setCopied] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const handleCopy = command => {
+  const handleCopy = (command) => {
     navigator.clipboard.writeText(command);
     setCopied(true);
   };
@@ -45,11 +45,11 @@ const BasicModal = ({ buttonColor, id, description, commands, textColor }) => {
       >
         <span
           style={{
-            display: 'flex',
-            alignItems: 'center',
+            display: "flex",
+            alignItems: "center",
           }}
         >
-          <Typography variant="body" sx={{ marginRight: '0.325rem' }}>
+          <Typography variant="body" sx={{ marginRight: "0.325rem" }}>
             Details
           </Typography>
           <BsInfoCircle />
@@ -57,12 +57,17 @@ const BasicModal = ({ buttonColor, id, description, commands, textColor }) => {
       </Button>
       <Modal open={open} onClose={handleClose}>
         <Box sx={style}>
-          <Typography id={`modal-${id}-title `} variant="h4" component="h2" style={{color: 'black'}}>
+          <Typography
+            id={`modal-${id}-title `}
+            variant="h4"
+            component="h2"
+            style={{ color: "black" }}
+          >
             {id}
           </Typography>
           <Container id={`modal-${id}-description`} sx={{ mt: 2 }}>
             <span>
-              <Typography style={{ fontSize: '1.2rem', color: 'black' }}>
+              <Typography style={{ fontSize: "1.2rem", color: "black" }}>
                 {description}
               </Typography>
             </span>
@@ -73,17 +78,17 @@ const BasicModal = ({ buttonColor, id, description, commands, textColor }) => {
                 <div
                   key={key}
                   style={{
-                    width: '90%',
-                    height: 'auto',
-                    padding: '1rem',
-                    margin: '1rem auto',
-                    boxShadow: '0px 2px 5px 2px rgba(0, 0, 0, 0.2)',
-                    color: 'black'
+                    width: "90%",
+                    height: "auto",
+                    padding: "1rem",
+                    margin: "1rem auto",
+                    boxShadow: "0px 2px 5px 2px rgba(0, 0, 0, 0.2)",
+                    color: "black",
                   }}
                   onClick={() => handleCopy(command)}
                 >
                   <Tooltip
-                    title={copied ? 'Copied to clipboard' : 'Click to copy'}
+                    title={copied ? "Copied to clipboard" : "Click to copy"}
                   >
                     <div onClick={() => handleCopy(command)}>{command}</div>
                   </Tooltip>

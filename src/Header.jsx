@@ -1,12 +1,12 @@
-import { Typography } from '@mui/material';
-import { motion } from 'framer-motion';
-import { default as ReactLogo } from './assets/react.svg';
+import { Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { default as ReactLogo } from "./assets/react.svg";
 
 const Header = () => {
   const welcome = {
-    greeting: 'Hey',
-    title: 'React',
-    subtitle: 'A list of React libraries and frameworks',
+    greeting: "Hey",
+    title: "React",
+    subtitle: "A list of React libraries and frameworks",
   };
 
   const { greeting, title, subtitle } = welcome;
@@ -24,7 +24,7 @@ const Header = () => {
     >
       <Typography
         variant="h1"
-        sx={{ color: '#646cff', fontWeight: '700', marginBottom: '1rem' }}
+        sx={{ color: "#646cff", fontWeight: "700", marginBottom: "1rem" }}
       >
         {greeting}, {title}
       </Typography>
@@ -33,9 +33,9 @@ const Header = () => {
         alt="React Logo"
         width="96"
         height="96"
-        style={{ margin: '0 auto', marginBottom: '1rem' }}
+        style={{ margin: "0 auto", marginBottom: "1rem" }}
       />
-      <Typography variant="h5" sx={{ color: 'black', fontWeight: '400' }}>
+      <Typography variant="h5" sx={{ color: "black", fontWeight: "400" }}>
         {subtitle}
       </Typography>
     </motion.div>
